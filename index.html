@@ -62,12 +62,34 @@
         display: none;
       }
 
-      .le2xcM {
+      .le2xcM.yJAeRs {
         font-size: 22px;
         border-radius: 20px;
         font-weight: 500;
         background: #114ca4;
         color: #fff;
+      }
+
+      /* links */
+      .j7SaMC {
+        --sokbLm: #0f428f;
+        color: #114ca4;
+      }
+
+      .j7SaMC:active {
+        color: #0f428f;
+      }
+
+      /* pop up buttons */
+      .ms4iod,
+      .ElsyZC {
+        --dRjLwj: #114ca4;
+        --eYnOri: #114ca4;
+      }
+
+      /* pop up icon */
+      .QeanVk .kZ09wa {
+        color: #000;
       }
 
       .MGWhHh {
@@ -288,14 +310,6 @@
             formElement.firstChild.shadowRoot.getElementById(
               "pr-lead-form-v3_inner"
             );
-
-          function shadowCallBack() {
-            // const title = shadowRootFormElement.querySelector(".CACh15");
-            const submit = shadowRootFormElement.querySelector(".le2xcM");
-
-            // title.innerHTML = "How much would you like to get up?";
-            submit.innerHTML = "Next";
-          }
 
           var shadowObserver = new MutationObserver(shadowCallBack);
           shadowObserver.observe(shadowRootFormElement, {
