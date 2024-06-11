@@ -12,12 +12,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
     <style id="lgFormCustomStyles">
       * {
-        font-family: "Montserrat";
+        font-family: "Gothic A1";
       }
 
       .stiLL4 {
@@ -25,8 +26,8 @@
         margin-bottom: 60px;
         width: 75%;
         border-radius: 10px;
-        border: 1px solid #d3e5ff;
-        background: #f5f9ff;
+        border: 1px solid #fff;
+        background: #fff;
         box-shadow: 0px 2px 50px 0px rgba(70, 125, 207, 0.3);
       }
 
@@ -40,8 +41,8 @@
 
       /* button focus */
       .u1zPlE.u1zPlE.u1zPlE.AXL6Qr {
-        background: #d3e5ff;
-        border-color: #114ca4;
+        background: #fff;
+        border-color: #000;
       }
 
       .u1zPlE.u1zPlE.u1zPlE.AXL6Qr::before {
@@ -66,25 +67,25 @@
         font-size: 22px;
         border-radius: 20px;
         font-weight: 500;
-        background: #114ca4;
-        color: #fff;
+        background: #ffd554;
+        color: #000;
       }
 
       /* links */
       .j7SaMC {
-        --sokbLm: #0f428f;
+        --sokbLm: #aae0e7;
         color: #114ca4;
       }
 
       .j7SaMC:active {
-        color: #0f428f;
+        color: #aae0e7;
       }
 
       /* pop up buttons */
       .ms4iod,
       .ElsyZC {
-        --dRjLwj: #114ca4;
-        --eYnOri: #114ca4;
+        --dRjLwj: #000;
+        --eYnOri: #000;
       }
 
       /* pop up icon */
@@ -104,7 +105,6 @@
       /*button text*/
       .dE9kP9 {
         color: #000;
-        font-family: Montserrat;
         font-size: 16px;
         font-style: normal;
         font-weight: 600;
@@ -117,11 +117,11 @@
       }
 
       .le2xcM:before {
-        background: #0f428f;
+        background: #ffd554;
       }
 
       .le2xcM:after {
-        --HWuQfP: #0f428f;
+        --HWuQfP: #ffd554;
       }
 
       .NR13zI:not(.VAu91x) .M4iQ5B:hover {
@@ -139,10 +139,10 @@
 
       @keyframes W7bXXG {
         0% {
-          box-shadow: 0 0 0 1px #0f428f;
+          box-shadow: 0 0 0 1px #ffd554;
         }
         25% {
-          box-shadow: 0 0 0 1px #0f428f;
+          box-shadow: 0 0 0 1px #ffd554;
         }
         100% {
           top: -9px;
@@ -171,10 +171,9 @@
         color: #000;
         text-align: center;
         font-feature-settings: "clig" off, "liga" off;
-        font-family: Montserrat;
         font-size: 20px;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 700;
         line-height: 120%; /* 24px */
         text-transform: capitalize;
       }
@@ -185,6 +184,11 @@
         --sokbLm: rgba(26, 197, 255, 0.5);
       }
 
+      .Aj8xe4,
+      .NEcBhb {
+        display: none;
+      }
+
       /* test modal */
       .QeanVk .hieZDw,
       .QeanVk .Zyf8cz {
@@ -193,6 +197,10 @@
   </head>
   <body id="body">
     <style>
+      * {
+        font-family: "Gothic A1", sans-serif;
+      }
+
       :root {
         color-scheme: light; /* both supported */
       }
@@ -201,30 +209,28 @@
       body {
         padding: 0;
         margin: 0;
+        background-color: #000;
       }
 
       header {
-        background: white;
+        background: #000;
       }
 
       .rect {
         box-sizing: border-box;
         padding-top: 80px;
-        /* position: absolute; */
         z-index: 1000;
-        left: 0;
-        width: 100%;
-        top: 0;
+        margin: 0 auto;
+        width: 380px;
         height: 190px;
       }
 
       .title {
-        color: #000;
+        color: #aae0e7;
         text-align: center;
-        /* font-family: Roboto; */
-        font-size: 30px;
+        font-size: 26px;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 900;
         line-height: 140%; /* 116.667% */
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -237,7 +243,6 @@
       }
 
       .subtitle {
-        font-family: "Montserrat";
         font-style: normal;
         font-weight: 400;
         font-size: 40px;
@@ -254,7 +259,6 @@
 
       .logo_text {
         padding-left: 8px;
-        font-family: "Montserrat";
         font-style: normal;
         font-weight: 600;
         font-size: 11px;
@@ -280,7 +284,7 @@
 
     <header>
       <div class="rect">
-        <div class="title">Only a few steps!</div>
+        <div class="title">fill out a short form to receive a loan!</div>
       </div>
     </header>
 
@@ -310,14 +314,14 @@
             formElement.firstChild.shadowRoot.getElementById(
               "pr-lead-form-v3_inner"
             );
-
+        }
+        var observer = new MutationObserver(afterFormInitCallback);
+        observer.observe(formElement, {
+          attributes: true,
+          childList: true,
+          subtree: true,
+        });
       };
-      var observer = new MutationObserver(afterFormInitCallback);
-      observer.observe(formElement, {
-        attributes: true,
-        childList: true,
-        subtree: true,
-      });
     </script>
   </body>
 </html>
